@@ -19,6 +19,7 @@ function Input(){
             .then(data => {
                 console.log(data);
                 setPokemonData(data);
+                console.log(pokemonData);
             })
         } catch(error){
             console.log(error);
@@ -30,7 +31,7 @@ function Input(){
             <input type="text" placeholder="Search Pokemon" onChange={handleChange}/>
             <button onClick={findPokemon}>Search</button>
             {show ? <Details pokemon={pokemonData}/> : null}
-            {show ? <p>type: {pokemonData.types[0].type.name}</p>: null}
+            {/* {show ? <p>type: {pokemonData.types[0].type.name}</p>: null} */}
         </div>
     )
 }
