@@ -8,24 +8,25 @@ function Input(){
     function handleChange(event){
         setPokemon(event.target.value);
     }
-    const pokemonData = [];
-    const findPokemon= async()=>{
+    function findPokemon(){
+        setShow(true);
+        const url = "https://pokeapi.co/api/v2/pokemon/"+pokemon;
         try{
-            
-            const url = "https://pokeapi.co/api/v2/pokemon/"+pokemon;
-            const res = await axios.get(url)
-            pokemonData.push(res.data);
-            setShow(true);
-        }
-        catch(err){
-            console.log(err);
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setPokemon(data);
+            })
+        } catch(error){
+            console.log(error);
         }
     }
     return(
         <div>
             <input type="text" placeholder="Search Pokemon" onChange={handleChange}/>
             <button onClick={findPokemon}>Search</button>
-            {show ? <Details pokemon={pokemonData}/> : null}
+            {show ? <Details pokemon={pokemon}/> : null}
         </div>
     )
 }
