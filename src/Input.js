@@ -1,7 +1,7 @@
 import React from "react";
 import {useState } from "react";
-import Details from "./Details.js";
-import axios from "axios";
+import Details from "./Details";
+import './Input.css';
 function Input(){
     const [pokemon,setPokemon] = useState("");
     const [pokemonData,setPokemonData] = useState([]); // [{}
@@ -11,27 +11,32 @@ function Input(){
     }
    
     const findPokemon= async () => {
+        //change pokemon to lowercase
+        let lowerPokemon = pokemon.toLowerCase();
         
-        const url = "https://pokeapi.co/api/v2/pokemon/"+pokemon;
+        const url = "https://pokeapi.co/api/v2/pokemon/"+lowerPokemon;
+
         try{
             fetch(url)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 setPokemonData(data);
-                console.log(pokemonData);
             })
+            setShow(true);
         } catch(error){
             console.log(error);
         }
-        setShow(true);
+        
     }
     return(
         <div>
-            <input type="text" placeholder="Search Pokemon" onChange={handleChange}/>
-            <button onClick={findPokemon}>Search</button>
+            <div class="input-container">
+                <input type="text" placeholder="Search Pokemon" onChange={handleChange}/>
+                <button onClick={findPokemon} className='button'>Search</button>
+                </div>
+            
+        
             {show ? <Details pokemon={pokemonData}/> : null}
-            {/* {show ? <p>type: {pokemonData.types[0].type.name}</p>: null} */}
         </div>
     )
 }

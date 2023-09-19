@@ -1,0 +1,73 @@
+/* Styling for the button */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFCC00; /* Yellow background color */
+    color: #FFFFFF; /* White text color */
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #FFD700; /* Lighter yellow background color on hover */
+    cursor: pointer;
+  }
+  
+  .button:active {
+    background-color: #FFA500; /* Orange background color when button is clicked */
+  }
+  
+  /* Styling for the Pokemon icon */
+  .button .pokemon-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    /* background-image: url('pokemon_icon.png'); Path to your Pokemon icon image */
+    background-size: cover;
+  }
+  
+  /* Styling for the button text */
+  .button .button-text {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  /* Styling for the input container */
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for the input */
+  .input-container input {
+    width: 20%;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    background-color: #F2F2F2; /* Background color for the input */
+    color: #333333; /* Text color for the input */
+    font-size: 16px;
+  }
+  
+  /* Styling for the Pokemon icon */
+  .input-container .pokemon-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    /* background-image: url('pokemon_icon.png'); Path to your Pokemon icon image */
+    background-size: cover;
+  }
+  
+  
+  

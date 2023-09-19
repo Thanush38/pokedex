@@ -1,6 +1,16 @@
 .App {
   text-align: center;
 }
+body {
+  background-color: #F2F2F2; /* Background color for the body */
+  background-image: url('pokemon-image.jpeg'); /* Path to your background image */
+  background-repeat: repeat; /* Repeat the background image */
+  background-position: center; /* Center the background image */
+  background-size: cover; /* Scale the background image to cover the entire body */
+}
+
+/* Additional styles to enhance the appearance */
+
 
 .App-logo {
   height: 40vmin;
