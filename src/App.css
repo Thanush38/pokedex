@@ -3,9 +3,9 @@
 }
 body {
   background-color: #F2F2F2; /* Background color for the body */
-  background-image: url('pokemon-image.jpeg'); /* Path to your background image */
+  background-image: url('pokemon-image.jpg'); /* Path to your background image */
+  min-height: 100%;
   background-repeat: repeat; /* Repeat the background image */
-  background-position: center; /* Center the background image */
   background-size: cover; /* Scale the background image to cover the entire body */
 }
 
