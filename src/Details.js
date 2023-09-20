@@ -25,28 +25,22 @@ function Details(props){
     };
     let num =0;
     const types = props.pokemon.types
+    //sets color of to respective type
     const typesList = types?.map((type) => {
         let Tcolor = colors[type.type.name]
         num++;
         return <span key={num} className='pokemon-type' style={{backgroundColor: `${Tcolor}`}}>type {num}: {type.type.name}</span>
     })
 
-    // const tt=[]
-    // const types = props.pokemon.types
-    
-    // tt.push(types[0].type.name)
-    
-    // console.log(tt)
-    // console.log(props.pokemon)
 
     return(
         <div>
         <div className='pokemon-image-container'>
+            {/*gets image from api*/}
             <img src={props.pokemon.sprites?.front_default} alt="pokemon"/>
-            {/* <img src={props.pokemon.sprites?.back_default} alt="pokemon"/> */}
         </div>
             <p className='pokemon-info'>Name: {props.pokemon.name}</p>
-            {/* {types()} */}
+        
             {typesList}
             <p className='pokemon-info'>height: {props.pokemon.height} dm</p>
             <p className='pokemon-info'>weight: {props.pokemon.weight} hg</p>
