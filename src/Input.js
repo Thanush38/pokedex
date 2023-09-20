@@ -9,6 +9,11 @@ function Input(){
     function handleChange(event){
         setPokemon(event.target.value);
     }
+    const enter= (event) => {
+        if(event.key === 'Enter'){
+            findPokemon();
+        }
+    }
    
     const findPokemon= async () => {
         //change pokemon to lowercase
@@ -31,8 +36,8 @@ function Input(){
     return(
         <div>
             <div class="input-container">
-                <input type="text" placeholder="Search Pokemon" onChange={handleChange}/>
-                <button onClick={findPokemon} className='button'>Search</button>
+                <input type="text" placeholder="Search Pokemon" onChange={handleChange} onKeyUp={enter}/>
+                <button onClick={findPokemon} className='button' >Search</button>
                 </div>
             
         

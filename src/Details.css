@@ -12,8 +12,8 @@
 }
 /* Styling for paragraphs about Pokemon */
 p.pokemon-info {
-    color: #333333; /* Text color for Pokemon info */
-    font-size: 16px;
+    color: #FFFFFF; /* Text color for Pokemon info */
+    font-size: 24px;
     line-height: 1.5;
     margin-bottom: 20px;
   }
