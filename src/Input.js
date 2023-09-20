@@ -21,16 +21,25 @@ function Input(){
         
         const url = "https://pokeapi.co/api/v2/pokemon/"+lowerPokemon;
 
-        try{
-            fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                setPokemonData(data);
-            })
-            setShow(true);
-        } catch(error){
-            console.log(error);
+        // try{
+        //     fetch(url)
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         setPokemonData(data);
+        //     })
+        //     setShow(true);
+        // } catch(error){
+        //     console.log(error);
+        // }
+        const res = await fetch(url);
+        if(!res.ok){
+            alert("Pokemon not found");
+            setShow(false);
+            return;
         }
+        const data = await res.json();
+        setPokemonData(data);
+        setShow(true);
         
     }
     return(
