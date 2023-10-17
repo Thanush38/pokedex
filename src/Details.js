@@ -1,7 +1,7 @@
 import { type } from '@testing-library/user-event/dist/type';
 import React from 'react';
 import './Details.css';
-
+import Chart from './Chart.js';
 function Details(props){
     const colors = {
         normal: '#A8A77A',
@@ -31,6 +31,17 @@ function Details(props){
         num++;
         return <span key={num} className='pokemon-type' style={{backgroundColor: `${Tcolor}`}}>type {num}: {type.type.name}</span>
     })
+    const abilities = props.pokemon.abilities
+    
+    const showAbilities = abilities?.map((ability) => {
+            let num2 =0;
+            num2++;
+            return <p className='pokemon-info'>ability: {ability.ability.name}</p>
+        
+    })
+    
+
+
 
 
     return(
@@ -42,8 +53,14 @@ function Details(props){
             <p className='pokemon-info'>Name: {props.pokemon.name}</p>
         
             {typesList}
+            <div className='pokemon-info-container'>
+            <p className='pokemon-info'>Pokedex Number: {props.pokemon.id}</p>
+            {showAbilities}
+
             <p className='pokemon-info'>height: {props.pokemon.height} dm</p>
             <p className='pokemon-info'>weight: {props.pokemon.weight} hg</p>
+            <Chart pokemon={props.pokemon}/>
+            </div>
 
         </div>
     )
