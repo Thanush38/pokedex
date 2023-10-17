@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import Details from "./Details";
+import Details from "./Details.js";
 import "./Input.css";
 
 function Input() {

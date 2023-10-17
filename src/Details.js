@@ -46,9 +46,14 @@ function Details(props){
 
     return(
         <div>
+        <div className="image-container">
         <div className='pokemon-image-container'>
             {/*gets image from api*/}
             <img src={props.pokemon.sprites?.front_default} alt="pokemon"/>
+        </div>
+        <div className='chart-container'>
+            <Chart pokemon={props.pokemon}/>
+        </div>
         </div>
             <p className='pokemon-info'>Name: {props.pokemon.name}</p>
         
@@ -59,7 +64,7 @@ function Details(props){
 
             <p className='pokemon-info'>height: {props.pokemon.height} dm</p>
             <p className='pokemon-info'>weight: {props.pokemon.weight} hg</p>
-            <Chart pokemon={props.pokemon}/>
+           
             </div>
 
         </div>
