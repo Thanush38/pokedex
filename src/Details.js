@@ -1,4 +1,3 @@
-import { type } from '@testing-library/user-event/dist/type';
 import React from 'react';
 import './Details.css';
 import Chart from './Chart.js';
@@ -34,8 +33,7 @@ function Details(props){
     const abilities = props.pokemon.abilities
     
     const showAbilities = abilities?.map((ability) => {
-            let num2 =0;
-            num2++;
+        
             return <p className='pokemon-info'>ability: {ability.ability.name}</p>
         
     })
